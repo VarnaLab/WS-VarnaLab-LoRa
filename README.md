@@ -21,7 +21,7 @@ temperature, pressure and humidity sensor
 
 ![temperature, pressure and humidity sensor](docs/bme280.jpg)
 
-3. **Microcontroller** [LILYGO TTGO E32](http://www.lilygo.cn/prod_view.aspx?TypeId=50060&Id=1326&FId=t3:50060:3)
+3. **Microcontroller** [LILYGO TTGO LORA32](http://www.lilygo.cn/prod_view.aspx?TypeId=50060&Id=1326&FId=t3:50060:3)
 
 ![ttgo lora esp32](docs/ttgo-lora.jpg)
 
