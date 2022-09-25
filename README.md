@@ -36,7 +36,7 @@
 
 ## Настройки на конфигурацията
 
-Във файла config.json се намират полетата за wifi настройка, както и настройките за [The Things Network](https://console.cloud.thethings.network)
+Във файла [config.json](config.json) се намират полетата за wifi настройка, както и настройките за [The Things Network](https://console.cloud.thethings.network)
 В TTN трябва да създадете устройство, което работи само с ABP автентикация, понеже драйвера за микропитон не подържа OTA.
 
 Файлът [ttn_payload_formatter_function.js](ttn_payload_formatter_function.js) съдържа javascript, който форматира данните в TTN. Функцията в този файл трябва да се сложи в. полето намиращо се в
