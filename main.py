@@ -1,4 +1,3 @@
-#Production!
 import machine
 import sds011
 import bme280 as bme280
@@ -9,7 +8,6 @@ from sx127x import TTN, SX127x
 from machine import Pin, SPI
 from config import *
 import json
-#from cayennelpp import LppFrame, LppUtil
 import math
 
 i2c = machine.I2C(0, sda=machine.Pin(21), scl=machine.Pin(22))
@@ -42,8 +40,6 @@ lora.receive()
 
 while True:
     
-    #frame = LppFrame()
-    
     dust_sensor.wake()
 
     #Returns NOK if no measurement found in reasonable time
@@ -63,11 +59,7 @@ while True:
         pm10=float(dust_sensor.pm10)
      
     temperature,pressure,humidity = bme.values
-     
-    #print(f"{temperature},{pressure},{humidity},{pm10},{pm25}")
 
-    
-    
     temp = math.ceil(float(temperature[:-1]))
     press = math.ceil(float(pressure[:-3]))
     hum = math.ceil(float(humidity[:-1]))
