@@ -4,6 +4,7 @@ import urandom
 from sx127x import TTN, SX127x
 from machine import Pin, SPI
 from config import *
+from esp32ble import *
 
 __DEBUG__ = True
 
@@ -25,6 +26,8 @@ def on_receive(lora, outgoing):
 lora.on_receive(on_receive)
 lora.receive()
 
+ble = ESP32_BLE("LoRa-BLE")
+
 while True:
     epoch = utime.time()
     temperature = urandom.randint(0,30)
@@ -33,9 +36,12 @@ while True:
 
     if __DEBUG__:
         print("%s: %s" % (epoch, temperature))
-        print(payload)
 
     lora.send_data(data=payload, data_length=len(payload), frame_counter=frame_counter)
+    
+    if ble.is_ble_connected:
+        ble.send(f'Time:{epoch}, Temperature:{temperature}')
+        
     lora.receive()
     
     frame_counter += 1

@@ -1,12 +1,15 @@
+#Production!
 import machine
 import sds011
 import bme280 as bme280
 import time
 import struct
+import urandom
 from sx127x import TTN, SX127x
 from machine import Pin, SPI
 from config import *
 import json
+#from cayennelpp import LppFrame, LppUtil
 import math
 
 i2c = machine.I2C(0, sda=machine.Pin(21), scl=machine.Pin(22))
@@ -36,11 +39,15 @@ lora.on_receive(on_receive)
 lora.receive()
 
 
+
 while True:
+    
+    #frame = LppFrame()
     
     dust_sensor.wake()
 
     #Returns NOK if no measurement found in reasonable time
+  
     status = dust_sensor.read()
     #Returns NOK if checksum failed
     pkt_status = dust_sensor.packet_status
@@ -54,18 +61,23 @@ while True:
     else:
         pm25=float(dust_sensor.pm25)
         pm10=float(dust_sensor.pm10)
-     
+        #print('PM25: ', dust_sensor.pm25)
+        #print('PM10: ', dust_sensor.pm10)
+#     
     temperature,pressure,humidity = bme.values
-     
-    temp = round(float(temperature[:-1]),1)
+#     
+    #print(f"{temperature},{pressure},{humidity},{pm10},{pm25}")
+#     time.sleep(1)
+    
+    
+    temp = math.ceil(float(temperature[:-1]))
     press = math.ceil(float(pressure[:-3]))
     hum = math.ceil(float(humidity[:-1]))
     
     
     print(f"{temp},{press},{hum},{pm10},{pm25}")
 
-    payload = struct.pack('>dIIff',temp,press,hum,pm25,pm10)
-    
+    payload = struct.pack('>IIIdd',temp,press,hum,pm25,pm10)
     lora.send_data(data=payload, data_length=len(payload), frame_counter=frame_counter)
     lora.receive()
     

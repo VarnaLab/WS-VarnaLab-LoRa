@@ -1,0 +1,25 @@
+{
+id: xx,
+data:[
+
+	{
+		name:"bme280",
+		type:"temp_sensor",
+		data: {
+			temperature: xx,
+	 		actual_pressure: xx,
+	 		humidity: xx,
+	 		sea_level_pressure: xx,
+		}
+	},
+	{
+		name:"dust",
+		type:"dust_sensor",
+		data: {
+			pm10: xx,
+	 		pm25: xx
+		}
+	}
+	 
+	]
+}
