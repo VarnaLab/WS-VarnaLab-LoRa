@@ -1,4 +1,4 @@
-# Метеостанции на [VarnaLab](https://www.varnalab.org) с LoRaWAN и Micropython
+# Метеостанция на [VarnaLab](https://www.varnalab.org) с LoRaWAN и Micropython
 
 
 
