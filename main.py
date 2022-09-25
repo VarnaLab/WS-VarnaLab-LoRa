@@ -3,7 +3,6 @@ import sds011
 import bme280 as bme280
 import time
 import struct
-import urandom
 from sx127x import TTN, SX127x
 from machine import Pin, SPI
 from config import *
