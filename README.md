@@ -3,7 +3,7 @@
 За български език [ТУК](README_BG.md)
 
 
-Thsi project uses the following libs:
+This project uses the following libs:
 
 1. LoRaWAN for micropython: [here](https://github.com/lemariva/uPyLoRaWAN/tree/LoRaWAN)
 2. SDS011 micropython driver: [here](https://github.com/g-sam/polly)
