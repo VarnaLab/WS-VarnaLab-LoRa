@@ -45,7 +45,7 @@ Dust sensor works over UART. Connect to the following MCU pins **rx = 16, tx = 1
 
 Wifi and  [The Things Network](https://console.cloud.thethings.network) settings are located in the file [config.py](config.py) 
 You have to create a device in TTN. It works only with ABP authentication since micropython driver doesn't support OTA.
-The file [ttn_payload_formatter_function.js](ttn_payload_formatter_function.js) contains а javascript function which formats the payload for TTN processing. Don't forget to change `above_sea_level` variable in that function to match your location's altitude. This function has to be put in the following place in TTN:
+The file [ttn_payload_formatter_function.js](ttn_payload_formatter_function.js) contains а javascript function which formats the payload for TTN processing. Don't forget to change `above_sea_level` variable in that function to match your location's altitude in meters. This function has to be put in the following place in TTN:
 
 > __Applications > [your application] > End devices > eui-[your device id] > Payload formatters > Uplink__
 
