@@ -9,6 +9,7 @@ This project uses the following libs:
 2. SDS011 micropython driver: [here](https://github.com/g-sam/polly)
 3. BME280 micropython driver: [here](https://github.com/robert-hh/BME280)
 
+
 ## Components
 
 1. **SDS011**
@@ -22,6 +23,9 @@ temperature, pressure and humidity sensor
 ![temperature, pressure and humidity sensor](docs/bme280.jpg)
 
 3. **Microcontroller** [LILYGO TTGO LORA32](http://www.lilygo.cn/prod_view.aspx?TypeId=50060&Id=1326&FId=t3:50060:3)
+
+You should download the specific micropython firmware from [here](https://micropython.org/download/LILYGO_TTGO_LORA32/)
+
 
 ![ttgo lora esp32](docs/ttgo-lora.jpg)
 
@@ -62,3 +66,8 @@ It is important to upload the files on the MCU with the following file structure
 ## Extras (Bluetooth)
 
 There is a class ([esp32ble.py](extras/esp32ble.py)) in Extras folder, which class allows using the esp32 bluetooth. I still haven't implemented it in the [main.py](main.py) file, but it can be used for UART debug, while the weather station is working. There is [sample code](extras/example_lora_ble_uart.py) in the same folder.
+
+## Extras (MQTT)
+
+Lilygo micropython formware doesn't have umqtt module preinstalled, so you have to upload the umqtt directory from the repo to your board.
+
