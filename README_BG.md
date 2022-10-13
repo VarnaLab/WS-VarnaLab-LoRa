@@ -19,6 +19,8 @@
 
 3. **Микроконтролер** [LILYGO TTGO E32](http://www.lilygo.cn/prod_view.aspx?TypeId=50060&Id=1326&FId=t3:50060:3)
 
+ Итеглете специфичният фърмуер за микроконтролера LilyGo от [тук](https://micropython.org/download/LILYGO_TTGO_LORA32/)
+
 ![ttgo lora esp32](docs/ttgo-lora.jpg)
 
 
@@ -62,3 +64,7 @@
 В папка Extras има клас ([esp32ble.py](extras/esp32ble.py)), който позволява ползването на блутут-а на esp32. Още не съм го имплементирал в главният 
 [main.py](main.py), но може да се ползва за UART дебъг докато станцията работи. Има [примерен код](extras/example_lora_ble_uart.py) в същата папка.
 
+
+## Екстри (MQTT)
+
+Във фърмуера на LilyGo няма преинсталиран umqtt модула, затова трябва да го добавим. Сложете цялата директориа umqtt заедно със съдържанието ѝ на микроконтролера.
